@@ -1,5 +1,5 @@
 
-public class Funcionario extends Empresa {
+public class Funcionario{
 	protected int number;
 	protected String name;
 	protected String address;
@@ -7,9 +7,8 @@ public class Funcionario extends Empresa {
 	protected Projeto projects[];
 	
 	
-	public Funcionario(String cnpj, String socialReason, Funcionario[] employees, int number, String name,
-			String address, int dependent, Projeto[] projects) {
-		super(cnpj, socialReason, employees);
+	public Funcionario(int number, String name, String address, int dependent, Projeto[] projects) {
+		super();
 		this.number = number;
 		this.name = name;
 		this.address = address;
@@ -41,13 +40,27 @@ public class Funcionario extends Empresa {
 		return dependent;
 	}
 	public void addProjeto(Projeto p) {
-		
+		for(int i = 0; i < 5; i++) {
+			if(projects[i] == null) {
+				projects[i] = p;
+				break;
+			}
+			if(i == 4) {
+				System.out.println("The employee already has 5 projects and can't have more than it.");
+			}
+		}
 	}
 	public void delProjeto(int c) {
-		
+		projects[c] = null;
 	}
 	public void printProjetos() {
-		
+		System.out.print("id\tname\thours");
+		String format = "%s%s-40%n";
+		for(int i = 0; i < 100 ; i++) {
+			if(projects[i] != null) {
+				System.out.printf(format, projects[i].id, projects[i].name, projects[i].hours);			
+			}
+		}
 	}
 	
 }

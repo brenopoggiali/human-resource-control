@@ -1,15 +1,14 @@
 
-public class Projeto extends Funcionario {
+public class Projeto{
 		protected int id;
 		protected String name;
 		protected int hours;
 
 		
-		public Projeto(String cnpj, String socialReason, Funcionario[] employees, int number, String name,
-				String address, int dependent, Projeto[] projects, int id, String name2, int hours) {
-			super(cnpj, socialReason, employees, number, name, address, dependent, projects);
+		public Projeto(int id, String name, int hours) {
+			super();
 			this.id = id;
-			name = name2;
+			this.name = name;
 			this.hours = hours;
 		}
 		public void setId(int c) {

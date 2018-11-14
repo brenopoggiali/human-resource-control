@@ -21,16 +21,42 @@ public class Empresa {
 	public String getCNPJ() {
 		return cnpj;
 	}
-	public String getReason() {
+	public String getRazao() {
 		return socialReason;
 	}
-	public void addEmployee(Funcionario f) {
-		
+	public void addFuncionario(Funcionario f) {
+		for(int i = 0; i < 100; i++) {
+			if(employees[i] == null) {
+				employees[i] = f;
+				break;
+			}
+			if(i == 99) {
+				System.out.println("The company already has 100 employees and cant have more than it.");
+			}
+		}
 	}
-	public void delEmployee() {
-		
+	public void delFuncionario() {
+		for(int i = 0; i < 100; i++) {
+			if(employees[i].projects == null) {
+				employees[i] = null;
+			}
+		}
+	} 
+	public void imprimeFuncionarios() {
+		for(int i = 0; i < 100 ; i++) {
+			if(employees[i] != null) {
+				System.out.println("Name = " + employees[i].name);
+				System.out.println("Number = " + employees[i].number);
+				System.out.println("Address = " + employees[i].address);
+				System.out.println("Dependent = " + employees[i].dependent);
+				System.out.print("\n");
+			}
+		}
 	}
-	public void printEmployees() {
+	
+	public void main(String[] args){
+
+		System.out.println("Hello World");
 		
 	}
 }

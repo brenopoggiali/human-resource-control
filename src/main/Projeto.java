@@ -1,16 +1,17 @@
+package main;
 
 public class Projeto{
-		protected int id;
-		protected String name;
-		protected int hours;
+		private int id;
+		private String name;
+		private int hours;
 
 		
 		public Projeto(int id, String name, int hours) {
-			super();
 			this.id = id;
 			this.name = name;
 			this.hours = hours;
 		}
+		
 		public void setId(int c) {
 			this.id = c;
 		}
